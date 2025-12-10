@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cine Stars</title>
+  <link rel="stylesheet" href="estilo.css" />
+  <link rel="shortcut icon" type= " image/x-icon" href="Imagenes/Logo.ico" />
+</head>
+<body>
+
+  <!-- Titulo -->
+  <header>
+    <div class="logo">
+      <img src="Imagenes/Logo.png" alt="Logo">
+      <h1>Cine Stars</h1>
+    </div>
+
+    <!-- Menú -->
+    <nav class="nav-in-header">
+      <a href="#cartelera" class="nav-link active">Cartelera</a>
+      <a href="#precios" class="nav-link">Precios</a>
+      <a href="#descuentos" class="nav-link">Descuentos</a>
+      <a href="#snacks" class="nav-link">Snacks</a>
+    </nav>
+
+    <!-- Botones -->
+    <div class="header-actions">
+    <span id="total-display">Total: 0 Bs.</span>
+    <button id="user-display" class="login-btn">Usuario</button>
+    <button id="pay-btn" class="pay-btn">Pagar</button>
+</div>
+  </header>
+
+  <!-- Carrusel -->
+  <div class="carousel-wrapper">
+    <div class="carousel">
+      <div class="carousel-track" id="carousel-track">
+        <div class="carousel-slide">
+          <img src="Imagenes/carruselfnf2.jpg" alt="Five Nights at Freddy's 2" height="400px" width="900px">
+        </div>
+        <div class="carousel-slide">
+          <img src="Imagenes/carrusaw5.jpg" alt="Inception">
+        </div>
+        <div class="carousel-slide">
+          <img src="Imagenes/Carrum.jpg" alt="Interstellar">
+        </div>
+      </div>
+      <button class="carousel-btn prev" id="prev-btn"><</button>
+      <button class="carousel-btn next" id="next-btn">></button>
+    </div>
+  </div>
+
+  <!-- Contenido Principal -->
+  <main class="container">
+
+    <!-- Cartelera -->
+    <section id="cartelera" class="section">
+      <h2> Películas en Cartelera</h2>
+      <div class="movies-grid">
+        <div class="movie-item">
+          <img src="Imagenes/cartefnf2.jpg" alt="Five Nights at Freddy's 2">
+          <div class="movie-info">
+            <h3>Five nights at freddy's 2</h3>
+            <p class="price">30 Bs.</p>
+            <!--selector de cantidad -->
+            <div class="quantity-control">
+              <button onclick="adjustQty(this, -1)">–</button>
+              <input type="number" min="0" value="0" data-price="30" data-name="Five Nights at Freddy's 2 " class="qty-input">
+              <button onclick="adjustQty(this, 1)">+</button>
+            </div>
+          </div>
+        </div>
+        <div class="movie-item">
+          <img src="Imagenes/carteJFDo.jpg" alt="Jurassic World Dominion">
+          <div class="movie-info">
+            <h3>Jurassic World Dominion</h3>
+            <p class="price">30 Bs.</p>
+            <div class="quantity-control">
+              <button onclick="adjustQty(this, -1)">–</button>
+              <input type="number" min="0" value="0" data-price="30" data-name="Jurassic World Dominion" class="qty-input">
+              <button onclick="adjustQty(this, 1)">+</button>
+            </div>
+          </div>
+        </div>
+        <div class="movie-item">
+          <img src="Imagenes/cartearrastramealinf.jpg" alt="Arrastrame al Infierno">
+          <div class="movie-info">
+            <h3>Arrastrame al Infierno</h3>
+            <p class="price">30Bs</p>
+            <div class="quantity-control">
+              <button onclick="adjustQty(this, -1)">–</button>
+              <input type="number" min="0" value="0" data-price="30" data-name="Arrastrame al Infierno" class="qty-input">
+              <button onclick="adjustQty(this, 1)">+</button>
+            </div>
+          </div>
+        </div>
+        <div class="movie-item">
+          <img src="Imagenes/cartem.jpg" alt="Una Pelicula de Minecraft">
+          <div class="movie-info">
+            <h3>Una Pelicula de Minecraft</h3>
+            <p class="price">30 Bs.</p>
+            <div class="quantity-control">
+              <button onclick="adjustQty(this, -1)">–</button>
+              <input type="number" min="0" value="0" data-price="30" data-name="Una Pelicula de Minecraft" class="qty-input">
+              <button onclick="adjustQty(this, 1)">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="cartelera" class="section">
+      <div class="movies-grid">
+        <div class="movie-item">
+          <img src="Imagenes/carteposesion.jpg" alt="La Ultima Posesión">
+          <div class="movie-info">
+            <h3>La Ultima Posesión</h3>
+            <p class="price">30 Bs.</p>
+            <div class="quantity-control">
+              <button onclick="adjustQty(this, -1)">–</button>
+              <input type="number" min="0" value="0" data-price="30" data-name="La Ultima Posesión" class="qty-input">
+              <button onclick="adjustQty(this, 1)">+</button>
+            </div>
+          </div>
+        </div>
+        <div class="movie-item">
+          <img src="Imagenes/cartereyleon.jpg" alt="Rey León">
+          <div class="movie-info">
+            <h3>Rey León</h3>
+            <p class="price">30 Bs.</p>
+            <div class="quantity-control">
+              <button onclick="adjustQty(this, -1)">–</button>
+              <input type="number" min="0" value="0" data-price="30" data-name="Rey León" class="qty-input">
+              <button onclick="adjustQty(this, 1)">+</button>
+            </div>
+          </div>
+        </div>
+        <div class="movie-item">
+          <img src="Imagenes/cartesawV.jpg" alt="Saw V">
+          <div class="movie-info">
+            <h3>Saw V</h3>
+            <p class="price">30Bs</p>
+            <div class="quantity-control">
+              <button onclick="adjustQty(this, -1)">–</button>
+              <input type="number" min="0" value="0" data-price="30" data-name="Saw V" class="qty-input">
+              <button onclick="adjustQty(this, 1)">+</button>
+            </div>
+          </div>
+        </div>
+        <div class="movie-item">
+          <img src="Imagenes/cartezoo2.jpeg" alt="Zootopia 2">
+          <div class="movie-info">
+            <h3>Zootopia 2</h3>
+            <p class="price">30 Bs.</p>
+            <div class="quantity-control">
+              <button onclick="adjustQty(this, -1)">–</button>
+              <input type="number" min="0" value="0" data-price="30" data-name="Zootopia 2" class="qty-input">
+              <button onclick="adjustQty(this, 1)">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+        <!-- Precios -->
+    <section id="precios" class="section">
+      <h2> Precios de Entradas</h2>
+      <div class="price-card">
+        <p><strong>General:</strong> 30 Bs.</p>
+        <p><strong>Peliculas de Estreno:</strong> 50 Bs.</p>
+        <p><strong>Niños 6-15 años:</strong> 25 Bs.</p>
+        <p><strong>Menores de 6 años: </strong> Entran Gratis</p>
+      </div>
+    </section>
+
+    <!-- Contenedor principal con asides -->
+    <div class="content-with-asides">
+
+      <!-- Aside Izquierdo -->
+      <aside class="aside-left">
+        <div class="promo-item">
+          <img src="Imagenes/slidebobesponja.jpg" alt="Bob Esponja">
+          <h4>Bob esponja la búsqueda de los pantalones cuadrados</h4>
+          <p>Bob Esponja debe emprender una aventura épica hacia el inframundo marino para rescatar sus icónicos pantalones, enfrentando al temido Holandés Volador!<br>Proximamente!</p>
+        </div>
+        <div class="promo-item">
+          <img src="Imagenes/slideshrek5.jpeg" alt="Shrek 5">
+          <h4>Shrek 5</h4>
+          <p>La vida familiar de Shrek y Fiona como padres de adolescentes, explorando la crisis de la mediana edad de Shrek y la rebeldía de su hija Felicia, quien podría accidentalmente llevarlos al mundo real, enfrentándose a un nuevo villano o hechicero que altera su realidad<br>Proximamente!</p>
+        </div>
+      </aside>
+
+      <!-- Contenido central -->
+      <div class="main-content">
+
+        <!-- Descuentos -->
+        <section id="descuentos" class="section">
+          <h2>Días de Descuento</h2>
+          <div class="discount-card">
+            <p><strong>Miércoles de Cine:</strong> 2x1 en todas las funciones</p>
+            <p><strong>Lunes Estudiantil:</strong> 20Bs con Carnet</p>
+            <p><strong>Domingo Familiar:</strong> Niños menores de 10 años entran gratis</p>
+          </div>
+        </section>
+
+        <!-- Snacks -->
+        <section id="snacks" class="section">
+          <h2>Snacks Disponibles</h2>
+          <div class="snacks-grid">
+            <div class="snack-item">
+              <img src="Imagenes/palomitas.png" alt="Palomitas">
+              <h3>Palomitas </h3>
+              <p>18 Bs.</p>
+              <div class="quantity-control">
+                <button onclick="adjustQty(this, -1)">–</button>
+                <input type="number" min="0" value="0" data-price="18" data-name="Palomitas" class="qty-input">
+                <button onclick="adjustQty(this, 1)">+</button>
+              </div>
+            </div>
+            <div class="snack-item">
+              <img src="Imagenes/dulce.jpeg" alt="Palomitas Dulces">
+              <h3>Palomitas Dulces</h3>
+              <p>20 Bs.</p>
+              <div class="quantity-control">
+                <button onclick="adjustQty(this, -1)">–</button>
+                <input type="number" min="0" value="0" data-price="20" data-name="Palomitas Dulces" class="qty-input">
+                <button onclick="adjustQty(this, 1)">+</button>
+              </div>
+            </div>
+            <div class="snack-item">
+              <img src="Imagenes/coca cola.jpg" alt="Vaso de Coca Cola">
+              <h3>Vaso de Coca Cola</h3>
+              <p>8 Bs.</p>
+              <div class="quantity-control">
+                <button onclick="adjustQty(this, -1)">–</button>
+                <input type="number" min="0" value="0" data-price="8" data-name="Vaso de Coca Cola" class="qty-input">
+                <button onclick="adjustQty(this, 1)">+</button>
+              </div>
+            </div>
+            <div class="snack-item">
+              <img src="Imagenes/combo.jpg" alt="Combo">
+              <h3>Combo</h3>
+              <p>24 Bs.</p>
+              <div class="quantity-control">
+                <button onclick="adjustQty(this, -1)">–</button>
+                <input type="number" min="0" value="0" data-price="24" data-name="Combo" class="qty-input">
+                <button onclick="adjustQty(this, 1)">+</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Aside Derecho -->
+      <aside class="aside-right">
+        <div class="promo-item">
+          <img src="Imagenes/slideToyStory5.jpg" alt="Toy story 5">
+          <h4>Toy story 5</h4>
+          <p>Explorará la relevancia de los juguetes tradicionales en un mundo dominado por la tecnología, donde una nueva tablet llamada Lilypad se convierte en el juguete favorito de la niña dueña, Bonnie, desplazando a Woody, Buzz y el resto de sus amigos, quienes deben adaptarse.<br>Proximamente!</p>
+        </div>
+        <div class="promo-item">
+          <img src="Imagenes/slideterryfer4.jpeg" alt="Terrifier 4">
+          <h4>Terrifier 4</h4>
+          <p>Revelara los orígenes de Art the Clown, explorando su conexión demoníaca de una manera más abstracta y "lynchiana", mezclando horror visceral con elementos psicológicos, mientras que Sienna se enfrenta a su destino en el infierno, buscando a la niña secuestrada y lidiando con la espada sagrada para un final épico<br>Proximamente!</p>
+        </div>
+      </aside>
+    </div> 
+  <footer>
+    <p> 2025 CineStars - DECM</p>
+  </footer>
+
+  <script src="inter.js"></script>
+</body>
+</html>
